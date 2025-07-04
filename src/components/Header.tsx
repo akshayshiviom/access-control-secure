@@ -70,9 +70,9 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link to="/#features" className="text-foreground hover:text-primary transition-colors">
+            <a href="/#features" className="text-foreground hover:text-primary transition-colors">
               Features
-            </Link>
+            </a>
             <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">
               Pricing
             </Link>
