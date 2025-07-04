@@ -55,9 +55,9 @@ const Features = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             Comprehensive Security Features
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our security software provides everything you need to protect your business data and control access across your organization.
-          </p>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive security solutions designed to protect your organization with enterprise-grade features.
+            </p>
         </div>
 
         {/* Features Grid */}
