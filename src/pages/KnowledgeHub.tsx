@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, Key, User, Users } from "lucide-react";
 
-const ResourcesPage = () => {
+const KnowledgeHubPage = () => {
   const resources = [
     {
       category: "Implementation Guides",
@@ -105,10 +105,10 @@ const ResourcesPage = () => {
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2 mb-6">
                 <Shield className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-foreground">Security Resources</span>
+                <span className="text-sm font-medium text-foreground">Knowledge Hub</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Knowledge Base & Resources
+                Knowledge Hub
               </h1>
               <p className="text-xl text-muted-foreground">
                 Everything you need to know about implementing and maximizing SecureGuard's security features in your organization.
@@ -204,4 +204,4 @@ const ResourcesPage = () => {
   );
 };
 
-export default ResourcesPage;
+export default KnowledgeHubPage;

@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
+import { Shield, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   return (
@@ -26,12 +32,23 @@ const Header = () => {
             <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">
               Pricing
             </Link>
-            <Link to="/resources" className="text-foreground hover:text-primary transition-colors">
-              Resources
-            </Link>
-            <Link to="/faq" className="text-foreground hover:text-primary transition-colors">
-              FAQ
-            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
+                Resources
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border-accent/20">
+                <DropdownMenuItem asChild>
+                  <Link to="/faq" className="w-full">FAQ</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/knowledge-hub" className="w-full">Knowledge Hub</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/whats-new" className="w-full">What's New</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* CTA Buttons */}
