@@ -1,15 +1,17 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import WhySecureGuard from "@/components/WhySecureGuard";
 
-const Index = () => {
+const WhySecureGuardPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <Hero />
+      <main className="pt-20">
+        <WhySecureGuard />
+      </main>
       <Footer />
     </div>
   );
 };
 
-export default Index;
+export default WhySecureGuardPage;

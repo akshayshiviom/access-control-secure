@@ -26,7 +26,7 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/#why-secureguard" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/why-secureguard" className="text-foreground hover:text-primary transition-colors">
               Why SecureGuard
             </Link>
             <DropdownMenu>
@@ -70,9 +70,9 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <a href="/#features" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/features" className="text-foreground hover:text-primary transition-colors">
               Features
-            </a>
+            </Link>
             <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">
               Pricing
             </Link>
