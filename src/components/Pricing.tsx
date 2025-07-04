@@ -1,9 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Shield } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useState } from "react";
 import DemoForm from "@/components/DemoForm";
 
 const Pricing = () => {
+  const [userCount, setUserCount] = useState(10);
+  
+  const individualPricePerUser = 300;
+  const packagePricePerUser = 110;
+  
+  const totalIndividualPrice = userCount * individualPricePerUser;
+  const totalPackagePrice = userCount * packagePricePerUser;
+  const savingsAmount = (userCount * 8 * individualPricePerUser) - totalPackagePrice;
+
   const features = [
     "Custom Login Page",
     "Password Policy",
@@ -28,6 +40,28 @@ const Pricing = () => {
           </p>
         </div>
 
+        {/* User Calculator */}
+        <div className="max-w-md mx-auto mb-12">
+          <Card className="p-6 bg-background/50 border-accent/20">
+            <div className="text-center mb-4">
+              <Label htmlFor="userCount" className="text-lg font-semibold text-foreground">
+                How many users do you have?
+              </Label>
+            </div>
+            <div className="flex items-center gap-4">
+              <Input
+                id="userCount"
+                type="number"
+                min="1"
+                value={userCount}
+                onChange={(e) => setUserCount(Math.max(1, parseInt(e.target.value) || 1))}
+                className="text-center text-lg font-semibold"
+              />
+              <span className="text-muted-foreground">users</span>
+            </div>
+          </Card>
+        </div>
+
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
@@ -36,8 +70,13 @@ const Pricing = () => {
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2 text-foreground">Individual Features</h3>
               <p className="text-muted-foreground mb-6">Pick and choose the security features you need</p>
-              <div className="text-5xl font-bold text-accent mb-2">₹300</div>
-              <div className="text-muted-foreground">per feature</div>
+              <div className="text-5xl font-bold text-accent mb-2">₹{individualPricePerUser.toLocaleString()}</div>
+              <div className="text-muted-foreground">/ user / year per feature</div>
+              <div className="mt-3 p-3 bg-accent/10 rounded-lg">
+                <div className="text-sm text-muted-foreground">Total for {userCount} users:</div>
+                <div className="text-2xl font-bold text-accent">₹{totalIndividualPrice.toLocaleString()}</div>
+                <div className="text-xs text-muted-foreground">per feature per year</div>
+              </div>
             </div>
 
             <div className="space-y-4 mb-8">
@@ -76,9 +115,14 @@ const Pricing = () => {
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2 text-foreground">Complete Security Package</h3>
               <p className="text-muted-foreground mb-6">Get all security features in one comprehensive solution</p>
-              <div className="text-5xl font-bold text-primary mb-2">₹1,100</div>
-              <div className="text-muted-foreground">for all features</div>
-              <div className="mt-2 text-sm text-accent">Save ₹1,300!</div>
+              <div className="text-5xl font-bold text-primary mb-2">₹{packagePricePerUser.toLocaleString()}</div>
+              <div className="text-muted-foreground">/ user / year for all features</div>
+              <div className="mt-3 p-3 bg-primary/10 rounded-lg">
+                <div className="text-sm text-muted-foreground">Total for {userCount} users:</div>
+                <div className="text-2xl font-bold text-primary">₹{totalPackagePrice.toLocaleString()}</div>
+                <div className="text-xs text-muted-foreground">per year</div>
+              </div>
+              <div className="mt-2 text-sm text-accent font-semibold">Save ₹{savingsAmount.toLocaleString()} compared to individual features!</div>
             </div>
 
             <div className="space-y-3 mb-8">
