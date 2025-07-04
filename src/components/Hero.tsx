@@ -48,8 +48,8 @@ const Hero = () => {
             <Button variant="hero" size="xl" className="min-w-48">
               Get Started Today
             </Button>
-            <Button variant="outline" size="xl" className="min-w-48 border-accent/20 text-foreground hover:bg-accent/10">
-              View Pricing
+            <Button variant="outline" size="xl" className="min-w-48 border-accent/20 text-foreground hover:bg-accent/10" asChild>
+              <a href="/pricing">View Pricing</a>
             </Button>
           </div>
 
