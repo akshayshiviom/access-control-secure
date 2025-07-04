@@ -4,11 +4,13 @@ import { Shield, Check, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import DemoForm from "@/components/DemoForm";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const [userCount, setUserCount] = useState(10);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [isFeatureDialogOpen, setIsFeatureDialogOpen] = useState(false);
@@ -31,6 +33,32 @@ const Pricing = () => {
       }
       return prev;
     });
+  };
+
+  const handleIndividualCheckout = () => {
+    if (selectedFeatures.length === 0) {
+      return; // Dialog will handle this
+    }
+    
+    const params = new URLSearchParams({
+      type: 'individual',
+      features: selectedFeatures.join(','),
+      users: userCount.toString(),
+      amount: selectedFeaturesPrice.toString()
+    });
+    
+    navigate(`/checkout?${params.toString()}`);
+  };
+
+  const handlePackageCheckout = () => {
+    const params = new URLSearchParams({
+      type: 'package',
+      features: features.join(','),
+      users: userCount.toString(),
+      amount: totalPackagePrice.toString()
+    });
+    
+    navigate(`/checkout?${params.toString()}`);
   };
 
   const features = [
@@ -171,13 +199,27 @@ const Pricing = () => {
                       </div>
                     )}
                   </div>
-                  <Button 
-                    onClick={() => setIsFeatureDialogOpen(false)} 
-                    className="w-full mt-4"
-                    disabled={selectedFeatures.length === 0}
-                  >
-                    Confirm Selection
-                  </Button>
+                  <div className="space-y-3">
+                    <Button 
+                      onClick={() => setIsFeatureDialogOpen(false)} 
+                      className="w-full"
+                      disabled={selectedFeatures.length === 0}
+                    >
+                      Confirm Selection
+                    </Button>
+                    {selectedFeatures.length > 0 && (
+                      <Button 
+                        onClick={() => {
+                          setIsFeatureDialogOpen(false);
+                          handleIndividualCheckout();
+                        }}
+                        variant="outline"
+                        className="w-full"
+                      >
+                        Proceed to Checkout
+                      </Button>
+                    )}
+                  </div>
                 </div>
               </DialogContent>
             </Dialog>
@@ -222,11 +264,21 @@ const Pricing = () => {
               </div>
             </div>
 
-            <DemoForm>
-              <Button variant="hero" size="lg" className="w-full">
-                Get Demo & Quote
+            <div className="space-y-3">
+              <Button 
+                onClick={handlePackageCheckout}
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+              >
+                Get Complete Package
               </Button>
-            </DemoForm>
+              <DemoForm>
+                <Button variant="outline" size="lg" className="w-full">
+                  Get Demo & Quote
+                </Button>
+              </DemoForm>
+            </div>
           </Card>
         </div>
 
