@@ -4,7 +4,7 @@ import { Shield, Check, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import DemoForm from "@/components/DemoForm";
@@ -165,53 +165,58 @@ const Pricing = () => {
               </div>
             )}
 
-            <Dialog open={isFeatureDialogOpen} onOpenChange={setIsFeatureDialogOpen}>
-              <DialogTrigger asChild>
-                <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10">
-                  {selectedFeatures.length > 0 ? 'Change Features' : 'Choose Features'}
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-md">
-                <DialogHeader>
-                  <DialogTitle>Select Features (Max 3)</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4">
-                  {features.map((feature) => (
-                    <div key={feature} className="flex items-center space-x-2">
-                      <Checkbox
-                        id={feature}
-                        checked={selectedFeatures.includes(feature)}
-                        onCheckedChange={() => handleFeatureToggle(feature)}
-                        disabled={!selectedFeatures.includes(feature) && selectedFeatures.length >= 3}
-                      />
-                      <Label htmlFor={feature} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                        {feature}
-                      </Label>
-                    </div>
-                  ))}
-                  <div className="pt-4 border-t">
-                    <div className="text-sm text-muted-foreground">
-                      Selected: {selectedFeatures.length}/3 features
-                    </div>
-                    {selectedFeatures.length > 0 && (
-                      <div className="text-lg font-semibold text-accent mt-2">
-                        Total: ₹{selectedFeaturesPrice.toLocaleString()}/year
-                      </div>
-                    )}
-                  </div>
-                  <Button 
-                    onClick={() => {
-                      setIsFeatureDialogOpen(false);
-                      handleIndividualCheckout();
-                    }}
-                    className="w-full"
-                    disabled={selectedFeatures.length === 0}
-                  >
-                    Proceed to Checkout
+            <div className="space-y-3">
+              <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10" asChild>
+                <Link to="/free-trial">Start Free Trial</Link>
+              </Button>
+              <Dialog open={isFeatureDialogOpen} onOpenChange={setIsFeatureDialogOpen}>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10">
+                    {selectedFeatures.length > 0 ? 'Change Features' : 'Choose Features'}
                   </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Select Features (Max 3)</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4">
+                    {features.map((feature) => (
+                      <div key={feature} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={feature}
+                          checked={selectedFeatures.includes(feature)}
+                          onCheckedChange={() => handleFeatureToggle(feature)}
+                          disabled={!selectedFeatures.includes(feature) && selectedFeatures.length >= 3}
+                        />
+                        <Label htmlFor={feature} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                          {feature}
+                        </Label>
+                      </div>
+                    ))}
+                    <div className="pt-4 border-t">
+                      <div className="text-sm text-muted-foreground">
+                        Selected: {selectedFeatures.length}/3 features
+                      </div>
+                      {selectedFeatures.length > 0 && (
+                        <div className="text-lg font-semibold text-accent mt-2">
+                          Total: ₹{selectedFeaturesPrice.toLocaleString()}/year
+                        </div>
+                      )}
+                    </div>
+                    <Button 
+                      onClick={() => {
+                        setIsFeatureDialogOpen(false);
+                        handleIndividualCheckout();
+                      }}
+                      className="w-full"
+                      disabled={selectedFeatures.length === 0}
+                    >
+                      Proceed to Checkout
+                    </Button>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
           </Card>
 
           {/* All-in-One Plan */}
@@ -254,6 +259,9 @@ const Pricing = () => {
             </div>
 
             <div className="space-y-3">
+              <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10" asChild>
+                <Link to="/free-trial">Start Free Trial</Link>
+              </Button>
               <Button 
                 onClick={handlePackageCheckout}
                 variant="hero" 

@@ -19,6 +19,7 @@ import NetworkSecurity from "./pages/NetworkSecurity";
 import CloudSecurity from "./pages/CloudSecurity";
 import PricingPage from "./pages/Pricing";
 import CheckoutPage from "./pages/Checkout";
+import FreeTrialPage from "./pages/FreeTrial";
 import FAQPage from "./pages/FAQ";
 import KnowledgeHubPage from "./pages/KnowledgeHub";
 import WhatsNewPage from "./pages/WhatsNew";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/cloud-security" element={<CloudSecurity />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/free-trial" element={<FreeTrialPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
           <Route path="/whats-new" element={<WhatsNewPage />} />

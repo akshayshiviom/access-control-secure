@@ -47,8 +47,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="hero" size="xl" className="min-w-48" asChild>
+              <Link to="/free-trial">Start Free Trial</Link>
+            </Button>
             <DemoForm>
-              <Button variant="hero" size="xl" className="min-w-48">
+              <Button variant="outline" size="xl" className="min-w-48 border-accent/20 text-foreground hover:bg-accent/10">
                 Get a Demo
               </Button>
             </DemoForm>

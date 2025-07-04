@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import DemoForm from "@/components/DemoForm";
 import { Shield, Lock, Key, User, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Features = () => {
   const features = [
@@ -78,6 +79,28 @@ const Features = () => {
               </p>
             </Card>
           ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4 text-foreground">
+              Ready to Secure Your Business?
+            </h3>
+            <p className="text-muted-foreground mb-8">
+              Start your 30-day free trial and experience all security features with no commitment.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/free-trial">Start Free Trial</Link>
+              </Button>
+              <DemoForm>
+                <Button variant="outline" size="lg">
+                  Get Demo & Quote
+                </Button>
+              </DemoForm>
+            </div>
+          </div>
         </div>
 
       </div>
