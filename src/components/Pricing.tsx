@@ -1,13 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Shield } from "lucide-react";
+import { Shield, Check, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
 import DemoForm from "@/components/DemoForm";
 
 const Pricing = () => {
   const [userCount, setUserCount] = useState(10);
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+  const [isFeatureDialogOpen, setIsFeatureDialogOpen] = useState(false);
   
   const individualPricePerUser = 300;
   const packagePricePerUser = 1100;
@@ -15,6 +19,19 @@ const Pricing = () => {
   const totalIndividualPrice = userCount * individualPricePerUser;
   const totalPackagePrice = userCount * packagePricePerUser;
   const savingsAmount = (userCount * 8 * individualPricePerUser) - totalPackagePrice;
+  
+  const selectedFeaturesPrice = userCount * selectedFeatures.length * individualPricePerUser;
+
+  const handleFeatureToggle = (feature: string) => {
+    setSelectedFeatures(prev => {
+      if (prev.includes(feature)) {
+        return prev.filter(f => f !== feature);
+      } else if (prev.length < 3) {
+        return [...prev, feature];
+      }
+      return prev;
+    });
+  };
 
   const features = [
     "Custom Login Page",
@@ -69,38 +86,101 @@ const Pricing = () => {
           <Card className="p-8 bg-gradient-card border-accent/20 relative">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2 text-foreground">Individual Features</h3>
-              <p className="text-muted-foreground mb-6">Pick and choose the security features you need</p>
+              <p className="text-muted-foreground mb-6">Pick and choose the security features you need (max 3)</p>
               <div className="text-5xl font-bold text-accent mb-2">₹{individualPricePerUser.toLocaleString()}</div>
               <div className="text-muted-foreground">/ user / year per feature</div>
-              <div className="mt-3 p-3 bg-accent/10 rounded-lg">
-                <div className="text-sm text-muted-foreground">Total for {userCount} users:</div>
-                <div className="text-2xl font-bold text-accent">₹{totalIndividualPrice.toLocaleString()}</div>
-                <div className="text-xs text-muted-foreground">per feature per year</div>
-              </div>
+              {selectedFeatures.length > 0 && (
+                <div className="mt-3 p-3 bg-accent/10 rounded-lg">
+                  <div className="text-sm text-muted-foreground">Total for {userCount} users, {selectedFeatures.length} features:</div>
+                  <div className="text-2xl font-bold text-accent">₹{selectedFeaturesPrice.toLocaleString()}</div>
+                  <div className="text-xs text-muted-foreground">per year</div>
+                </div>
+              )}
             </div>
 
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center text-foreground">
-                <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
-                <span>Choose any single feature</span>
+            {selectedFeatures.length > 0 ? (
+              <div className="space-y-3 mb-8">
+                <div className="text-sm font-semibold text-foreground mb-2">Selected Features:</div>
+                {selectedFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-center text-foreground">
+                    <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+                <div className="flex items-center text-muted-foreground pt-2 border-t border-accent/20">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Basic support included</span>
+                </div>
+                <div className="flex items-center text-muted-foreground">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Easy integration</span>
+                </div>
               </div>
-              <div className="flex items-center text-foreground">
-                <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
-                <span>Basic support included</span>
+            ) : (
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center text-foreground">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Choose up to 3 features</span>
+                </div>
+                <div className="flex items-center text-foreground">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Basic support included</span>
+                </div>
+                <div className="flex items-center text-foreground">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Easy integration</span>
+                </div>
+                <div className="flex items-center text-foreground">
+                  <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                  <span>Scale as you grow</span>
+                </div>
               </div>
-              <div className="flex items-center text-foreground">
-                <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
-                <span>Easy integration</span>
-              </div>
-              <div className="flex items-center text-foreground">
-                <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
-                <span>Scale as you grow</span>
-              </div>
-            </div>
+            )}
 
-            <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10">
-              Choose Features
-            </Button>
+            <Dialog open={isFeatureDialogOpen} onOpenChange={setIsFeatureDialogOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10">
+                  {selectedFeatures.length > 0 ? 'Change Features' : 'Choose Features'}
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Select Features (Max 3)</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-4">
+                  {features.map((feature) => (
+                    <div key={feature} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={feature}
+                        checked={selectedFeatures.includes(feature)}
+                        onCheckedChange={() => handleFeatureToggle(feature)}
+                        disabled={!selectedFeatures.includes(feature) && selectedFeatures.length >= 3}
+                      />
+                      <Label htmlFor={feature} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        {feature}
+                      </Label>
+                    </div>
+                  ))}
+                  <div className="pt-4 border-t">
+                    <div className="text-sm text-muted-foreground">
+                      Selected: {selectedFeatures.length}/3 features
+                    </div>
+                    {selectedFeatures.length > 0 && (
+                      <div className="text-lg font-semibold text-accent mt-2">
+                        Total: ₹{selectedFeaturesPrice.toLocaleString()}/year
+                      </div>
+                    )}
+                  </div>
+                  <Button 
+                    onClick={() => setIsFeatureDialogOpen(false)} 
+                    className="w-full mt-4"
+                    disabled={selectedFeatures.length === 0}
+                  >
+                    Confirm Selection
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </Card>
 
           {/* All-in-One Plan */}
