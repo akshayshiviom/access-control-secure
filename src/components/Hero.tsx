@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import DemoForm from "@/components/DemoForm";
 import heroImage from "@/assets/security-hero.jpg";
 
 const Hero = () => {
@@ -46,9 +47,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="xl" className="min-w-48">
-              Get Started Today
-            </Button>
+            <DemoForm>
+              <Button variant="hero" size="xl" className="min-w-48">
+                Get a Demo
+              </Button>
+            </DemoForm>
             <Button variant="outline" size="xl" className="min-w-48 border-accent/20 text-foreground hover:bg-accent/10" asChild>
               <Link to="/pricing">View Pricing</Link>
             </Button>

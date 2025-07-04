@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Shield } from "lucide-react";
+import DemoForm from "@/components/DemoForm";
 
 const Pricing = () => {
   const features = [
@@ -97,9 +98,11 @@ const Pricing = () => {
               </div>
             </div>
 
-            <Button variant="hero" size="lg" className="w-full">
-              Get Complete Package
-            </Button>
+            <DemoForm>
+              <Button variant="hero" size="lg" className="w-full">
+                Get Demo & Quote
+              </Button>
+            </DemoForm>
           </Card>
         </div>
 
@@ -112,9 +115,11 @@ const Pricing = () => {
             <p className="text-muted-foreground mb-6">
               Our security experts are here to help you determine the best solution for your business needs.
             </p>
-            <Button variant="premium" size="lg">
-              Contact Security Expert
-            </Button>
+            <DemoForm>
+              <Button variant="premium" size="lg">
+                Contact Security Expert
+              </Button>
+            </DemoForm>
           </div>
         </div>
       </div>

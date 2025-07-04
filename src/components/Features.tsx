@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import DemoForm from "@/components/DemoForm";
 import { Shield, Lock, Key, User, Users } from "lucide-react";
 
 const Features = () => {
@@ -83,22 +85,11 @@ const Features = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Ready to secure your business with enterprise-grade protection?
           </p>
-          <div className="flex justify-center">
-            <Card className="p-8 bg-gradient-card border-accent/20 max-w-md">
-              <h3 className="text-2xl font-bold mb-4 text-foreground">
-                Get Started Today
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Choose individual features or get the complete security package.
-              </p>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">₹300</div>
-                <div className="text-sm text-muted-foreground mb-4">per feature</div>
-                <div className="text-2xl font-bold text-primary">₹1,100</div>
-                <div className="text-sm text-muted-foreground">complete package</div>
-              </div>
-            </Card>
-          </div>
+          <DemoForm>
+            <Button variant="hero" size="lg" className="hover-scale">
+              Get Your Security Demo
+            </Button>
+          </DemoForm>
         </div>
       </div>
     </section>
