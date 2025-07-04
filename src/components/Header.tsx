@@ -34,7 +34,31 @@ const Header = () => {
                 Solutions
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-accent/20">
+              <DropdownMenuContent className="bg-background border-accent/20 w-56">
+                <DropdownMenuItem asChild>
+                  <Link to="/custom-login-page" className="w-full">Custom Login Page</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/password-policy" className="w-full">Password Policy</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/self-password-reset" className="w-full">Self Password Reset</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/two-factor-auth" className="w-full">2FA Authentication</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/ip-restriction" className="w-full">IP Restriction</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/device-restriction" className="w-full">Device Restriction</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/personal-gmail-block" className="w-full">Personal Gmail Block</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/software-access-management" className="w-full">Software Access Management</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link to="/data-protection" className="w-full">Data Protection</Link>
                 </DropdownMenuItem>
