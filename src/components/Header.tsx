@@ -26,6 +26,26 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
+            <Link to="/#why-secureguard" className="text-foreground hover:text-primary transition-colors">
+              Why SecureGuard
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">
+                Solutions
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border-accent/20">
+                <DropdownMenuItem asChild>
+                  <Link to="/data-protection" className="w-full">Data Protection</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/network-security" className="w-full">Network Security</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/cloud-security" className="w-full">Cloud Security</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link to="/#features" className="text-foreground hover:text-primary transition-colors">
               Features
             </Link>
