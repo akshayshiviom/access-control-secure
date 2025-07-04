@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,15 +20,18 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="/#features" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/#features" className="text-foreground hover:text-primary transition-colors">
               Features
-            </a>
-            <a href="/pricing" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link to="/pricing" className="text-foreground hover:text-primary transition-colors">
               Pricing
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
+            </Link>
+            <Link to="/resources" className="text-foreground hover:text-primary transition-colors">
+              Resources
+            </Link>
+            <Link to="/faq" className="text-foreground hover:text-primary transition-colors">
+              FAQ
+            </Link>
           </nav>
 
           {/* CTA Buttons */}

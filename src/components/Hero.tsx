@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/security-hero.jpg";
 
 const Hero = () => {
@@ -49,7 +50,7 @@ const Hero = () => {
               Get Started Today
             </Button>
             <Button variant="outline" size="xl" className="min-w-48 border-accent/20 text-foreground hover:bg-accent/10" asChild>
-              <a href="/pricing">View Pricing</a>
+              <Link to="/pricing">View Pricing</Link>
             </Button>
           </div>
 
