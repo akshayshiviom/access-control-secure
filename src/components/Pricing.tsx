@@ -10,7 +10,7 @@ const Pricing = () => {
   const [userCount, setUserCount] = useState(10);
   
   const individualPricePerUser = 300;
-  const packagePricePerUser = 110;
+  const packagePricePerUser = 1100;
   
   const totalIndividualPrice = userCount * individualPricePerUser;
   const totalPackagePrice = userCount * packagePricePerUser;
