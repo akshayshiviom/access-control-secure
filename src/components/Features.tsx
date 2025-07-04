@@ -80,17 +80,6 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-muted-foreground mb-6">
-            Ready to secure your business with enterprise-grade protection?
-          </p>
-          <DemoForm>
-            <Button variant="hero" size="lg" className="hover-scale">
-              Get Your Security Demo
-            </Button>
-          </DemoForm>
-        </div>
       </div>
     </section>
   );

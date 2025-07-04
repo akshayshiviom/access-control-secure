@@ -64,31 +64,6 @@ const WhySecureGuard = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-background/80 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Join Over 10,000+ Organizations
-            </h3>
-            <p className="text-muted-foreground text-lg mb-6">
-              From startups to Fortune 500 companies, organizations worldwide trust SecureGuard 
-              to protect their most valuable digital assets.
-            </p>
-            <div className="flex justify-center items-center gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-primary">99.9%</div>
-                <div className="text-sm text-muted-foreground">Uptime</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">10M+</div>
-                <div className="text-sm text-muted-foreground">Threats Blocked</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-primary">&lt;1ms</div>
-                <div className="text-sm text-muted-foreground">Response Time</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
