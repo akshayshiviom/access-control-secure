@@ -199,27 +199,16 @@ const Pricing = () => {
                       </div>
                     )}
                   </div>
-                  <div className="space-y-3">
-                    <Button 
-                      onClick={() => setIsFeatureDialogOpen(false)} 
-                      className="w-full"
-                      disabled={selectedFeatures.length === 0}
-                    >
-                      Confirm Selection
-                    </Button>
-                    {selectedFeatures.length > 0 && (
-                      <Button 
-                        onClick={() => {
-                          setIsFeatureDialogOpen(false);
-                          handleIndividualCheckout();
-                        }}
-                        variant="outline"
-                        className="w-full"
-                      >
-                        Proceed to Checkout
-                      </Button>
-                    )}
-                  </div>
+                  <Button 
+                    onClick={() => {
+                      setIsFeatureDialogOpen(false);
+                      handleIndividualCheckout();
+                    }}
+                    className="w-full"
+                    disabled={selectedFeatures.length === 0}
+                  >
+                    Proceed to Checkout
+                  </Button>
                 </div>
               </DialogContent>
             </Dialog>
