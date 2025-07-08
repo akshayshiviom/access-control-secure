@@ -15,8 +15,6 @@ import DeviceRestriction from "./pages/DeviceRestriction";
 import PersonalGmailBlock from "./pages/PersonalGmailBlock";
 import SoftwareAccessManagement from "./pages/SoftwareAccessManagement";
 import DataProtection from "./pages/DataProtection";
-import NetworkSecurity from "./pages/NetworkSecurity";
-import CloudSecurity from "./pages/CloudSecurity";
 import PricingPage from "./pages/Pricing";
 import CheckoutPage from "./pages/Checkout";
 import FreeTrialPage from "./pages/FreeTrial";
@@ -46,8 +44,6 @@ const App = () => (
           <Route path="/personal-gmail-block" element={<PersonalGmailBlock />} />
           <Route path="/software-access-management" element={<SoftwareAccessManagement />} />
           <Route path="/data-protection" element={<DataProtection />} />
-          <Route path="/network-security" element={<NetworkSecurity />} />
-          <Route path="/cloud-security" element={<CloudSecurity />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/free-trial" element={<FreeTrialPage />} />
