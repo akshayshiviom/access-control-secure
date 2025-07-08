@@ -112,16 +112,29 @@ const Pricing = () => {
           
           {/* Individual Features Plan */}
           <Card className="p-8 bg-gradient-card border-accent/20 relative">
+            {/* 20% Off Banner */}
+            <div className="absolute -top-3 -right-3">
+              <div className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg transform rotate-12">
+                20% OFF First Year
+              </div>
+            </div>
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2 text-foreground">Individual Features</h3>
               <p className="text-muted-foreground mb-6">Pick and choose the security features you need (max 3)</p>
-              <div className="text-5xl font-bold text-accent mb-2">₹{individualPricePerUser.toLocaleString()}</div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <div className="text-2xl font-bold text-muted-foreground line-through">₹{individualPricePerUser.toLocaleString()}</div>
+                <div className="text-5xl font-bold text-accent">₹{Math.round(individualPricePerUser * 0.8).toLocaleString()}</div>
+              </div>
               <div className="text-muted-foreground">/ user / year per feature</div>
+              <div className="text-sm text-destructive font-semibold">First year only, then ₹{individualPricePerUser.toLocaleString()}/year</div>
               {selectedFeatures.length > 0 && (
                 <div className="mt-3 p-3 bg-accent/10 rounded-lg">
                   <div className="text-sm text-muted-foreground">Total for {userCount} users, {selectedFeatures.length} features:</div>
-                  <div className="text-2xl font-bold text-accent">₹{selectedFeaturesPrice.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">per year</div>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="text-lg text-muted-foreground line-through">₹{selectedFeaturesPrice.toLocaleString()}</div>
+                    <div className="text-2xl font-bold text-accent">₹{Math.round(selectedFeaturesPrice * 0.8).toLocaleString()}</div>
+                  </div>
+                  <div className="text-xs text-muted-foreground">first year, then ₹{selectedFeaturesPrice.toLocaleString()}/year</div>
                 </div>
               )}
             </div>
@@ -227,18 +240,31 @@ const Pricing = () => {
                 Most Popular
               </div>
             </div>
+            {/* 20% Off Banner */}
+            <div className="absolute -top-3 -right-3">
+              <div className="bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg transform rotate-12">
+                20% OFF First Year
+              </div>
+            </div>
 
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-2 text-foreground">Complete Security Package</h3>
               <p className="text-muted-foreground mb-6">Get all security features in one comprehensive solution</p>
-              <div className="text-5xl font-bold text-primary mb-2">₹{packagePricePerUser.toLocaleString()}</div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <div className="text-2xl font-bold text-muted-foreground line-through">₹{packagePricePerUser.toLocaleString()}</div>
+                <div className="text-5xl font-bold text-primary">₹{Math.round(packagePricePerUser * 0.8).toLocaleString()}</div>
+              </div>
               <div className="text-muted-foreground">/ user / year for all features</div>
+              <div className="text-sm text-destructive font-semibold">First year only, then ₹{packagePricePerUser.toLocaleString()}/year</div>
               <div className="mt-3 p-3 bg-primary/10 rounded-lg">
                 <div className="text-sm text-muted-foreground">Total for {userCount} users:</div>
-                <div className="text-2xl font-bold text-primary">₹{totalPackagePrice.toLocaleString()}</div>
-                <div className="text-xs text-muted-foreground">per year</div>
+                <div className="flex items-center justify-center gap-2">
+                  <div className="text-lg text-muted-foreground line-through">₹{totalPackagePrice.toLocaleString()}</div>
+                  <div className="text-2xl font-bold text-primary">₹{Math.round(totalPackagePrice * 0.8).toLocaleString()}</div>
+                </div>
+                <div className="text-xs text-muted-foreground">first year, then ₹{totalPackagePrice.toLocaleString()}/year</div>
               </div>
-              <div className="mt-2 text-sm text-accent font-semibold">Save ₹{savingsAmount.toLocaleString()} compared to individual features!</div>
+              <div className="mt-2 text-sm text-accent font-semibold">Save ₹{Math.round(savingsAmount * 0.8).toLocaleString()} compared to individual features!</div>
             </div>
 
             <div className="space-y-3 mb-8">
