@@ -62,12 +62,6 @@ const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link to="/data-protection" className="w-full">Data Protection</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/network-security" className="w-full">Network Security</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/cloud-security" className="w-full">Cloud Security</Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link to="/features" className="text-foreground hover:text-primary transition-colors">
