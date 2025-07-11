@@ -6,23 +6,23 @@ import { Shield } from "lucide-react";
 const FAQPage = () => {
   const faqs = [
     {
-      question: "What is SecureGuard and how does it help my business?",
-      answer: "SecureGuard is a comprehensive security software solution designed as your first step towards cybersecurity. It helps businesses manage and control access to data and software applications, providing essential security features like custom login pages, password policies, 2FA, and access restrictions."
+      question: "What is Viami and how does it help my business?",
+      answer: "Viami is a comprehensive security software solution designed as your first step towards cybersecurity. It helps businesses manage and control access to data and software applications, providing essential security features like custom login pages, password policies, 2FA, and access restrictions."
     },
     {
       question: "Can I purchase individual features or do I need the complete package?",
       answer: "You have the flexibility to choose! You can purchase individual security features for ₹300 each, or get our complete security package with all 8 features for ₹1,100 - saving you ₹1,300 compared to buying features separately."
     },
     {
-      question: "How quickly can I implement SecureGuard in my organization?",
-      answer: "SecureGuard is designed for easy integration. Most features can be implemented within 24-48 hours with our guided setup process. Our technical support team assists with the implementation to ensure smooth deployment."
+      question: "How quickly can I implement Viami in my organization?",
+      answer: "Viami is designed for easy integration. Most features can be implemented within 24-48 hours with our guided setup process. Our technical support team assists with the implementation to ensure smooth deployment."
     },
     {
-      question: "What types of businesses benefit most from SecureGuard?",
-      answer: "SecureGuard is ideal for small to medium businesses, startups, and enterprises looking to establish their first line of cybersecurity defense. It's particularly beneficial for companies handling sensitive data, remote teams, and organizations requiring controlled software access."
+      question: "What types of businesses benefit most from Viami?",
+      answer: "Viami is ideal for small to medium businesses, startups, and enterprises looking to establish their first line of cybersecurity defense. It's particularly beneficial for companies handling sensitive data, remote teams, and organizations requiring controlled software access."
     },
     {
-      question: "Does SecureGuard support multi-factor authentication?",
+      question: "Does Viami support multi-factor authentication?",
       answer: "Yes! Our 2FA (Two-Factor Authentication) feature provides an additional layer of security beyond passwords. This significantly reduces the risk of unauthorized access even if passwords are compromised."
     },
     {
@@ -42,8 +42,8 @@ const FAQPage = () => {
       answer: "We provide comprehensive support including implementation assistance, technical documentation, email support, and priority support for complete package customers. Our security experts are available to help you optimize your security setup."
     },
     {
-      question: "Is my data secure with SecureGuard?",
-      answer: "Security is our top priority. SecureGuard itself follows enterprise-grade security standards, including encrypted data transmission, secure storage, and regular security audits. We're designed to protect your business while ensuring our own platform maintains the highest security standards."
+      question: "Is my data secure with Viami?",
+      answer: "Security is our top priority. Viami itself follows enterprise-grade security standards, including encrypted data transmission, secure storage, and regular security audits. We're designed to protect your business while ensuring our own platform maintains the highest security standards."
     }
   ];
 
@@ -60,7 +60,7 @@ const FAQPage = () => {
                 <span className="text-sm font-medium text-foreground">Frequently Asked Questions</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                Got Questions About SecureGuard?
+                Got Questions About Viami?
               </h1>
               <p className="text-xl text-muted-foreground">
                 Find answers to common questions about our security software features, pricing, and implementation.
@@ -97,17 +97,17 @@ const FAQPage = () => {
                 Still Have Questions?
               </h2>
               <p className="text-muted-foreground mb-8">
-                Our security experts are here to help you understand how SecureGuard can best protect your business.
+                Our security experts are here to help you understand how Viami can best protect your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="mailto:support@secureguard.com" 
+                  href="mailto:support@viami.com" 
                   className="inline-flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground hover:shadow-glow transform hover:scale-105 shadow-premium h-11 rounded-md px-8 font-medium transition-all duration-300"
                 >
                   Contact Support
                 </a>
                 <a 
-                  href="mailto:sales@secureguard.com" 
+                  href="mailto:sales@viami.com" 
                   className="inline-flex items-center justify-center gap-2 border border-accent/20 bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-foreground transition-all duration-300"
                 >
                   Talk to Sales

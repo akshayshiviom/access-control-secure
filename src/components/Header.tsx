@@ -19,15 +19,15 @@ const Header = () => {
               <Shield className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">SecureGuard</h1>
+              <h1 className="text-xl font-bold text-foreground">Viami</h1>
               <p className="text-xs text-muted-foreground">Enterprise Security</p>
             </div>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/why-secureguard" className="text-foreground hover:text-primary transition-colors">
-              Why SecureGuard
+            <Link to="/why-viami" className="text-foreground hover:text-primary transition-colors">
+              Why Viami
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors">

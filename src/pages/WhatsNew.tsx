@@ -100,7 +100,7 @@ const WhatsNewPage = () => {
                 <span className="text-sm font-medium text-foreground">Product Roadmap</span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                What's New at SecureGuard
+                What's New at Viami
               </h1>
               <p className="text-xl text-muted-foreground">
                 Stay up-to-date with the latest features and improvements we're building to enhance your security experience.
@@ -154,7 +154,7 @@ const WhatsNewPage = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6 text-foreground">
-                Shape the Future of SecureGuard
+                Shape the Future of Viami
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
                 Your feedback drives our development. Let us know what features you'd like to see next or share your thoughts on our current roadmap.
@@ -196,8 +196,8 @@ const WhatsNewPage = () => {
               
               <p className="text-sm text-muted-foreground">
                 You can also reach out to us directly at{" "}
-                <a href="mailto:feedback@secureguard.com" className="text-accent hover:text-primary transition-colors">
-                  feedback@secureguard.com
+                <a href="mailto:feedback@viami.com" className="text-accent hover:text-primary transition-colors">
+                  feedback@viami.com
                 </a>
               </p>
             </div>

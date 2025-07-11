@@ -13,7 +13,7 @@ const Footer = () => {
                 <Shield className="w-5 h-5 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-foreground">SecureGuard</h3>
+                <h3 className="text-lg font-bold text-foreground">Viami</h3>
                 <p className="text-xs text-muted-foreground">Enterprise Security</p>
               </div>
             </div>
@@ -49,9 +49,9 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>Enterprise Sales:</p>
-              <p className="text-accent">sales@secureguard.com</p>
+              <p className="text-accent">sales@viami.com</p>
               <p>Technical Support:</p>
-              <p className="text-accent">support@secureguard.com</p>
+              <p className="text-accent">support@viami.com</p>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-accent/20 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
-            © 2024 SecureGuard. All rights reserved.
+            © 2024 Viami. All rights reserved.
           </p>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">

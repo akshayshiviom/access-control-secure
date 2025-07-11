@@ -10,7 +10,7 @@ const KnowledgeHubPage = () => {
       category: "Implementation Guides",
       items: [
         {
-          title: "Getting Started with SecureGuard",
+          title: "Getting Started with Viami",
           description: "Complete setup guide for implementing your first security features",
           type: "Guide",
           icon: Shield
@@ -111,7 +111,7 @@ const KnowledgeHubPage = () => {
                 Knowledge Hub
               </h1>
               <p className="text-xl text-muted-foreground">
-                Everything you need to know about implementing and maximizing SecureGuard's security features in your organization.
+                Everything you need to know about implementing and maximizing Viami's security features in your organization.
               </p>
             </div>
           </div>

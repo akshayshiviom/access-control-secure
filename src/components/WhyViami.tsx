@@ -1,7 +1,7 @@
 import { Shield, Lock, Eye, Zap, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
-const WhySecureGuard = () => {
+const WhyViami = () => {
   const reasons = [
     {
       icon: Shield,
@@ -40,11 +40,11 @@ const WhySecureGuard = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">
-            Why Choose <span className="text-primary">SecureGuard</span>?
+            Why Choose <span className="text-primary">Viami</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             In an increasingly dangerous digital landscape, your organization needs more than basic security. 
-            SecureGuard delivers enterprise-grade protection with unmatched performance and reliability.
+            Viami delivers enterprise-grade protection with unmatched performance and reliability.
           </p>
         </div>
 
@@ -69,4 +69,4 @@ const WhySecureGuard = () => {
   );
 };
 
-export default WhySecureGuard;
+export default WhyViami;

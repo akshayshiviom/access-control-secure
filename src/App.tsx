@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FeaturesPage from "./pages/Features";
-import WhySecureGuardPage from "./pages/WhySecureGuard";
+import WhyViamiPage from "./pages/WhyViami";
 import CustomLoginPage from "./pages/CustomLoginPage";
 import PasswordPolicy from "./pages/PasswordPolicy";
 import SelfPasswordReset from "./pages/SelfPasswordReset";
@@ -34,7 +34,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/why-secureguard" element={<WhySecureGuardPage />} />
+          <Route path="/why-viami" element={<WhyViamiPage />} />
           <Route path="/custom-login-page" element={<CustomLoginPage />} />
           <Route path="/password-policy" element={<PasswordPolicy />} />
           <Route path="/self-password-reset" element={<SelfPasswordReset />} />

@@ -1,17 +1,17 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhySecureGuard from "@/components/WhySecureGuard";
+import WhyViami from "@/components/WhyViami";
 
-const WhySecureGuardPage = () => {
+const WhyViamiPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
-        <WhySecureGuard />
+        <WhyViami />
       </main>
       <Footer />
     </div>
   );
 };
 
-export default WhySecureGuardPage;
+export default WhyViamiPage;
