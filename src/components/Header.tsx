@@ -87,6 +87,9 @@ const Header = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link to="/contact" className="text-foreground hover:text-primary transition-colors">
+              Contact Us
+            </Link>
           </nav>
 
           {/* CTA Buttons */}
