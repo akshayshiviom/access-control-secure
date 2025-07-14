@@ -82,9 +82,6 @@ const Header = () => {
                 <DropdownMenuItem asChild>
                   <Link to="/knowledge-hub" className="w-full">Knowledge Hub</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/whats-new" className="w-full">What's New</Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>

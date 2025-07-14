@@ -20,7 +20,7 @@ import CheckoutPage from "./pages/Checkout";
 import FreeTrialPage from "./pages/FreeTrial";
 import FAQPage from "./pages/FAQ";
 import KnowledgeHubPage from "./pages/KnowledgeHub";
-import WhatsNewPage from "./pages/WhatsNew";
+
 import ContactUsPage from "./pages/ContactUs";
 import PartnersPage from "./pages/Partners";
 import NotFound from "./pages/NotFound";
@@ -51,7 +51,7 @@ const App = () => (
           <Route path="/free-trial" element={<FreeTrialPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
-          <Route path="/whats-new" element={<WhatsNewPage />} />
+          
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/partners" element={<PartnersPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
