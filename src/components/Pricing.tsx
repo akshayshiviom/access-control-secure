@@ -108,7 +108,58 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          
+          {/* Free Plan */}
+          <Card className="p-8 bg-gradient-card border-accent/20 relative">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Free Plan</h3>
+              <p className="text-muted-foreground mb-6">Perfect for getting started with basic security features</p>
+              <div className="text-5xl font-bold text-accent mb-2">Free</div>
+              <div className="text-muted-foreground">Forever</div>
+              <div className="mt-3 p-3 bg-accent/10 rounded-lg">
+                <div className="text-sm text-muted-foreground">For up to {userCount} users</div>
+                <div className="text-lg font-bold text-accent">No cost, no credit card required</div>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              <div className="flex items-center text-foreground">
+                <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <span>Custom Login Page</span>
+              </div>
+              <div className="flex items-center text-foreground">
+                <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <span>Password Policy</span>
+              </div>
+              <div className="flex items-center text-foreground">
+                <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <span>Self Password Reset</span>
+              </div>
+              <div className="flex items-center text-muted-foreground pt-2 border-t border-accent/20">
+                <X className="w-5 h-5 text-muted-foreground mr-3 flex-shrink-0" />
+                <span>2FA Authentication</span>
+              </div>
+              <div className="flex items-center text-muted-foreground">
+                <X className="w-5 h-5 text-muted-foreground mr-3 flex-shrink-0" />
+                <span>IP Restriction</span>
+              </div>
+              <div className="flex items-center text-muted-foreground">
+                <X className="w-5 h-5 text-muted-foreground mr-3 flex-shrink-0" />
+                <span>Advanced Features</span>
+              </div>
+              <div className="flex items-center text-foreground pt-2 border-t border-accent/20">
+                <Shield className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <span>Community support</span>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Button variant="outline" size="lg" className="w-full border-accent/20 text-foreground hover:bg-accent/10" asChild>
+                <Link to="/free-trial">Get Started Free</Link>
+              </Button>
+            </div>
+          </Card>
           
           {/* Individual Features Plan */}
           <Card className="p-8 bg-gradient-card border-accent/20 relative">
