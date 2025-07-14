@@ -15,7 +15,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-foreground">Viami</h3>
-                <p className="text-xs text-muted-foreground">Enterprise Security</p>
+                <p className="text-xs text-muted-foreground">SaaS Security</p>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -39,7 +39,7 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">Help Center</a></li>
+              <li><Link to="/knowledge-hub" className="text-muted-foreground hover:text-accent transition-colors">Knowledge Hub</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-accent transition-colors">Contact Us</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-accent transition-colors">Security</a></li>
             </ul>
