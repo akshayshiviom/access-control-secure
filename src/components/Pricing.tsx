@@ -127,16 +127,27 @@ const Pricing = () => {
               </div>
               <div className="text-muted-foreground">/ user / year per feature</div>
               <div className="text-sm text-destructive font-semibold">First year only, then ₹{individualPricePerUser.toLocaleString()}/year</div>
-              {selectedFeatures.length > 0 && (
-                <div className="mt-3 p-3 bg-accent/10 rounded-lg">
-                  <div className="text-sm text-muted-foreground">Total for {userCount} users, {selectedFeatures.length} features:</div>
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="text-lg text-muted-foreground line-through">₹{selectedFeaturesPrice.toLocaleString()}</div>
-                    <div className="text-2xl font-bold text-accent">₹{Math.round(selectedFeaturesPrice * 0.8).toLocaleString()}</div>
-                  </div>
-                  <div className="text-xs text-muted-foreground">first year, then ₹{selectedFeaturesPrice.toLocaleString()}/year</div>
+              <div className="mt-3 p-3 bg-accent/10 rounded-lg">
+                <div className="text-sm text-muted-foreground">
+                  Total for {userCount} users, {selectedFeatures.length > 0 ? selectedFeatures.length : '1-3'} features:
                 </div>
-              )}
+                <div className="flex items-center justify-center gap-2">
+                  <div className="text-lg text-muted-foreground line-through">
+                    ₹{selectedFeatures.length > 0 ? selectedFeaturesPrice.toLocaleString() : (userCount * individualPricePerUser).toLocaleString()}
+                  </div>
+                  <div className="text-2xl font-bold text-accent">
+                    ₹{selectedFeatures.length > 0 ? Math.round(selectedFeaturesPrice * 0.8).toLocaleString() : Math.round(userCount * individualPricePerUser * 0.8).toLocaleString()}
+                  </div>
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  first year, then ₹{selectedFeatures.length > 0 ? selectedFeaturesPrice.toLocaleString() : (userCount * individualPricePerUser).toLocaleString()}/year
+                </div>
+                {selectedFeatures.length === 0 && (
+                  <div className="text-xs text-muted-foreground mt-1 italic">
+                    *Price shown for 1 feature. Total will update when you select features.
+                  </div>
+                )}
+              </div>
             </div>
 
             {selectedFeatures.length > 0 ? (
