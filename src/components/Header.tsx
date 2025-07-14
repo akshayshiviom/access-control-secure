@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">Viami</h1>
-              <p className="text-xs text-muted-foreground">Enterprise Security</p>
+              <p className="text-xs text-muted-foreground">SaaS Security</p>
             </div>
           </div>
 
