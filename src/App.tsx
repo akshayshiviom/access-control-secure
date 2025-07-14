@@ -22,6 +22,7 @@ import FAQPage from "./pages/FAQ";
 import KnowledgeHubPage from "./pages/KnowledgeHub";
 import WhatsNewPage from "./pages/WhatsNew";
 import ContactUsPage from "./pages/ContactUs";
+import PartnersPage from "./pages/Partners";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const App = () => (
           <Route path="/knowledge-hub" element={<KnowledgeHubPage />} />
           <Route path="/whats-new" element={<WhatsNewPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
