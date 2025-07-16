@@ -127,14 +127,6 @@ const WhyViami = () => {
               In an increasingly dangerous digital landscape, your organization needs more than basic security. 
               Viami delivers enterprise-grade protection with unmatched performance and reliability.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/free-trial">Start Free Trial</Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/contact">Talk to an Expert</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -337,10 +329,7 @@ const WhyViami = () => {
             <p className="text-xl text-muted-foreground mb-8">
               Join thousands of organizations that trust Viami to protect their digital assets.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/free-trial">Start Free Trial</Link>
-              </Button>
+            <div className="flex justify-center">
               <Button variant="outline" size="lg" asChild>
                 <Link to="/pricing">View Pricing</Link>
               </Button>
