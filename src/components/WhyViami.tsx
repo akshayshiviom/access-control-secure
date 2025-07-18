@@ -235,6 +235,7 @@ const WhyViami = () => {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* Management Team Section */}
       {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
@@ -293,6 +294,8 @@ const WhyViami = () => {
         </div>
       </section> */}
 
+=======
+>>>>>>> 264f6c604b7137dacf357d4e50cf17467ff5173a
       {/* Why Choose Us Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
