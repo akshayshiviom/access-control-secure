@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import viamiLogo from "@/assets/viami-logo.png";
+import viamiLogo from "@/assets/viami logo.png";
 
 const Footer = () => {
   return (
@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src={viamiLogo} 
                 alt="Viami" 
-                className="h-6 w-auto"
+                className="h-8 w-45"
               />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -48,9 +48,9 @@ const Footer = () => {
             <h4 className="text-foreground font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>Sales:</p>
-              <p className="text-accent">sales@viami.com</p>
+              <p className="text-accent">sales@viami.in</p>
               <p>Technical Support:</p>
-              <p className="text-accent">support@viami.com</p>
+              <p className="text-accent">support@viami.in</p>
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import viamiLogo from "@/assets/viami logo.png";
 import { Link } from "react-router-dom";
 
 const WhyViami = () => {
@@ -120,8 +121,9 @@ const WhyViami = () => {
       <section className="py-24 bg-gradient-hero">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-              Why Choose <span className="text-primary">Viami</span>?
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground flex flex-col items-center gap-4">
+              <span>Why Choose</span>
+              <img src={viamiLogo} alt="Viami" className="h-12 md:h-16 w-auto" />
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               In an increasingly dangerous digital world, your organization needs more than basic security. 

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import viamiLogo from "@/assets/viami-logo.png";
+import viamiLogo from "@/assets/viami logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,13 +15,13 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src={viamiLogo} 
               alt="Viami" 
               className="h-8 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">

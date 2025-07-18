@@ -24,11 +24,12 @@ const Hero = () => {
       <div className="absolute bottom-20 right-10 opacity-20 animate-float delay-1000">
         <Shield className="w-16 h-16 text-accent" />
       </div>
-
+      
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
+          <br></br><br></br>
           <div className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2 mb-8 animate-pulse-glow">
             <Shield className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-foreground">Your First Step Towards Data Security</span>
