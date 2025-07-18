@@ -31,18 +31,18 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-secondary/50 backdrop-blur-sm border border-accent/20 rounded-full px-4 py-2 mb-8 animate-pulse-glow">
             <Shield className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-foreground">Your First Step Towards Cybersecurity</span>
+            <span className="text-sm font-medium text-foreground">Your First Step Towards Data Security</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent leading-tight">
-            Secure Your Business Data Access
+            Secure Your Business Data
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             In today's digital age, managing and controlling access to data and software is a critical challenge. 
-            Our comprehensive security solution is your company's first step towards robust cybersecurity.
+            Our comprehensive DLP solution is your company's first step towards robust Security.
           </p>
 
           {/* CTA Buttons */}
@@ -62,11 +62,11 @@ const Hero = () => {
 
           {/* Trust Indicators */}
           <div className="mt-16 text-sm text-muted-foreground">
-            <p className="mb-4">Trusted by businesses worldwide</p>
+            <p className="mb-4">Made in India</p>
             <div className="flex items-center justify-center gap-8 opacity-60">
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4" />
-                <span>Enterprise Security</span>
+                <span>Saas Security</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="w-4 h-4" />

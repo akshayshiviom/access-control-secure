@@ -177,7 +177,7 @@ const Pricing = () => {
                 <div className="text-5xl font-bold text-accent">₹{Math.round(individualPricePerUser * 0.8).toLocaleString()}</div>
               </div>
               <div className="text-muted-foreground">/ user / year per feature</div>
-              <div className="text-sm text-destructive font-semibold">First year only, then ₹{individualPricePerUser.toLocaleString()}/year</div>
+              <div className="text-sm text-destructive font-semibold"> ₹{individualPricePerUser.toLocaleString()}/user/year at Renewal </div>
               <div className="mt-3 p-3 bg-accent/10 rounded-lg">
                 <div className="text-sm text-muted-foreground">
                   Total for {userCount} users, {selectedFeatures.length > 0 ? selectedFeatures.length : '1-3'} features:
@@ -324,7 +324,7 @@ const Pricing = () => {
                   <div className="text-lg text-muted-foreground line-through">₹{totalPackagePrice.toLocaleString()}</div>
                   <div className="text-2xl font-bold text-primary">₹{Math.round(totalPackagePrice * 0.8).toLocaleString()}</div>
                 </div>
-                <div className="text-xs text-muted-foreground">first year, then ₹{totalPackagePrice.toLocaleString()}/year</div>
+                <div className="text-xs text-muted-foreground">₹{totalPackagePrice.toLocaleString()}/user/year at Renewal</div>
               </div>
               <div className="mt-2 text-sm text-accent font-semibold">Save ₹{Math.round(savingsAmount * 0.8).toLocaleString()} compared to individual features!</div>
             </div>

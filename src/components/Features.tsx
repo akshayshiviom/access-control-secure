@@ -85,7 +85,7 @@ const Features = () => {
         <div className="text-center mt-16">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold mb-4 text-foreground">
-              Ready to Secure Your Business?
+              Ready to Secure Your Business Data?
             </h3>
             <p className="text-muted-foreground mb-8">
               Start your 30-day free trial and experience all security features with no commitment.
@@ -96,7 +96,7 @@ const Features = () => {
               </Button>
               <DemoForm>
                 <Button variant="outline" size="lg">
-                  Get Demo & Quote
+                  Request a Demo
                 </Button>
               </DemoForm>
             </div>

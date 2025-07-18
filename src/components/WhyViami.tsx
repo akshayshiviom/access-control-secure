@@ -55,27 +55,27 @@ const WhyViami = () => {
 
   const teamMembers = [
     {
-      name: "Sarah Chen",
-      role: "Chief Executive Officer",
-      experience: "Former VP of Cybersecurity at Microsoft",
+      name: "Punit Thakkar",
+      role: "Chairman",
+      experience: "CEO at Shivaami",
       image: "👩‍💼"
     },
     {
-      name: "Michael Rodriguez",
-      role: "Chief Technology Officer",
-      experience: "Ex-Senior Security Architect at Google",
+      name: "Akshay Thakkar",
+      role: "CEO",
+      experience: "CEO at Shiviom",
       image: "👨‍💻"
     },
     {
-      name: "Dr. Priya Sharma",
-      role: "Chief Security Officer",
-      experience: "Former NSA Cybersecurity Director",
+      name: "Priyanka Khanna",
+      role: "Chief Revenue Officer",
+      experience: "CRO at Shivaami",
       image: "👩‍🔬"
     },
     {
-      name: "James Wilson",
+      name: "Chetana Chaudhary",
       role: "VP of Product",
-      experience: "Previously led security products at Amazon",
+      experience: "CTO at Shivaami",
       image: "👨‍💼"
     }
   ];
@@ -124,7 +124,7 @@ const WhyViami = () => {
               Why Choose <span className="text-primary">Viami</span>?
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              In an increasingly dangerous digital landscape, your organization needs more than basic security. 
+              In an increasingly dangerous digital world, your organization needs more than basic security. 
               Viami delivers enterprise-grade protection with unmatched performance and reliability.
             </p>
           </div>
@@ -157,8 +157,8 @@ const WhyViami = () => {
               </div>
               <h2 className="text-4xl font-bold mb-6 text-foreground">Our Vision</h2>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                To create a world where every organization, regardless of size, has access to enterprise-grade cybersecurity 
-                that's simple to deploy, manage, and scale. We envision a future where security breaches are a thing of the past.
+                To create a world where every organization, regardless of size, has access to enterprise-grade seccurity software 
+                that's simple to deploy, manage, and scale. We envision a future where Data access breaches are a thing of the past.
               </p>
             </div>
           </div>
@@ -324,7 +324,7 @@ const WhyViami = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
-              Ready to Secure Your Business?
+              Ready to Secure your Business?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
               Join thousands of organizations that trust Viami to protect their digital assets.

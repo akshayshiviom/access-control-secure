@@ -17,7 +17,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Your first step towards comprehensive cybersecurity. Protecting businesses with enterprise-grade security solutions.
+              Your first step towards Securing your Data. Protecting businesses with enterprise-grade security solutions.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
           <div>
             <h4 className="text-foreground font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>Enterprise Sales:</p>
+              <p>Sales:</p>
               <p className="text-accent">sales@viami.com</p>
               <p>Technical Support:</p>
               <p className="text-accent">support@viami.com</p>
@@ -58,7 +58,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-accent/20 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
-            © 2024 Viami. All rights reserved.
+            © 2025 Viami. All rights reserved.
           </p>
           <div className="flex items-center gap-6 mt-4 sm:mt-0">
             <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">

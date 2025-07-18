@@ -42,7 +42,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
     
     toast({
       title: "Demo Request Submitted!",
-      description: "Our security experts will contact you within 24 hours to schedule your personalized demo.",
+      description: "Our security experts will contact you within 2 hours to schedule your personalized demo.",
     });
     
     setIsSubmitting(false);
@@ -116,7 +116,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number</Label>
+              <Label htmlFor="phone">Phone Number *</Label>
               <Input
                 id="phone"
                 type="tel"
@@ -140,7 +140,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="jobTitle">Job Title</Label>
+              <Label htmlFor="jobTitle">Job Title *</Label>
               <Input
                 id="jobTitle"
                 value={formData.jobTitle}
@@ -152,7 +152,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="companySize">Company Size</Label>
+              <Label htmlFor="companySize">Company Size *</Label>
               <Select value={formData.companySize} onValueChange={(value) => handleInputChange("companySize", value)}>
                 <SelectTrigger className="bg-background border-accent/20">
                   <SelectValue placeholder="Select company size" />
@@ -167,18 +167,18 @@ const DemoForm = ({ children }: DemoFormProps) => {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="securityNeeds">Primary Security Need</Label>
+              <Label htmlFor="securityNeeds">Primary Security Need *</Label>
               <Select value={formData.securityNeeds} onValueChange={(value) => handleInputChange("securityNeeds", value)}>
                 <SelectTrigger className="bg-background border-accent/20">
                   <SelectValue placeholder="Select primary need" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="access-control">Access Control</SelectItem>
-                  <SelectItem value="password-management">Password Management</SelectItem>
-                  <SelectItem value="2fa">Two-Factor Authentication</SelectItem>
-                  <SelectItem value="device-security">Device Security</SelectItem>
-                  <SelectItem value="complete-solution">Complete Security Package</SelectItem>
-                  <SelectItem value="compliance">Compliance Requirements</SelectItem>
+                  <SelectItem value="access-control">Saas Access Control</SelectItem>
+                  <SelectItem value="password-management">Password Policy</SelectItem>
+                  <SelectItem value="2fa">2FA Authentication</SelectItem>
+                  <SelectItem value="device-security">@gmail Block</SelectItem>
+                  <SelectItem value="complete-solution">Custom Login Page</SelectItem>
+                  <SelectItem value="compliance">IP Restriction</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -221,7 +221,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
         <div className="mt-6 p-4 bg-secondary/20 rounded-lg border border-accent/10">
           <p className="text-sm text-muted-foreground text-center">
             <Shield className="w-4 h-4 inline-block mr-2" />
-            Our security experts will contact you within 24 hours to schedule a personalized demo tailored to your business needs.
+            Our security experts will contact you within 2 hours to schedule a personalized demo tailored to your business needs.
           </p>
         </div>
       </DialogContent>
