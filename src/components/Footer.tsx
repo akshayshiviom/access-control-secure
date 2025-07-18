@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import viamiLogo from "@/assets/viami-logo.png";
+import viamiLogo from "@/assets/viami-company-logo.png";
 
 const Footer = () => {
   return (

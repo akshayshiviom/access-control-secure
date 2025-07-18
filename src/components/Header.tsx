@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import viamiLogo from "@/assets/viami-logo.png";
+import viamiLogo from "@/assets/viami-company-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
