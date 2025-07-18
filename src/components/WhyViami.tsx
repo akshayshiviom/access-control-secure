@@ -111,7 +111,7 @@ const WhyViami = () => {
   const stats = [
     { number: "99.9%", label: "Uptime Guarantee" },
     { number: "24/7", label: "Expert Support" },
-    { number: "50+", label: "Countries Served" }
+    // { number: "50+", label: "Countries Served" }
   ];
 
   return (
@@ -134,7 +134,7 @@ const WhyViami = () => {
       {/* Stats Section */}
       <section className="py-16 bg-background border-b border-accent/20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
@@ -234,7 +234,7 @@ const WhyViami = () => {
       </section>
 
       {/* Management Team Section */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-foreground">Leadership Team</h2>
@@ -254,10 +254,10 @@ const WhyViami = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Company Journey Section */}
-      <section className="py-20 bg-gradient-subtle">
+      {/* <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
@@ -289,7 +289,7 @@ const WhyViami = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-background">
