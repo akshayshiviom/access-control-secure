@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Shield, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import viamiLogo from "@/assets/viami-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,13 +16,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-primary rounded-lg shadow-glow">
-              <Shield className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Viami</h1>
-              <p className="text-xs text-muted-foreground">SaaS Security</p>
-            </div>
+            <img 
+              src={viamiLogo} 
+              alt="Viami" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Navigation */}

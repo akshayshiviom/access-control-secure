@@ -1,5 +1,5 @@
-import { Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import viamiLogo from "@/assets/viami-logo.png";
 
 const Footer = () => {
   return (
@@ -10,13 +10,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-gradient-primary rounded-lg shadow-glow">
-                <Shield className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-foreground">Viami</h3>
-                <p className="text-xs text-muted-foreground">SaaS Security</p>
-              </div>
+              <img 
+                src={viamiLogo} 
+                alt="Viami" 
+                className="h-6 w-auto"
+              />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Your first step towards comprehensive cybersecurity. Protecting businesses with enterprise-grade security solutions.
