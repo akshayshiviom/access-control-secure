@@ -65,8 +65,8 @@ const ContactUs = () => {
                 <CardDescription>Get in touch via email</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-accent font-medium">sales@viami.com</p>
-                <p className="text-accent font-medium">support@viami.com</p>
+                <p className="text-accent font-medium">sales@viami.in</p>
+                <p className="text-accent font-medium">support@viami.in</p>
               </CardContent>
             </Card>
 

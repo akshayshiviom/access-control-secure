@@ -101,13 +101,13 @@ const FAQPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="mailto:support@viami.com" 
+                  href="mailto:support@viami.in" 
                   className="inline-flex items-center justify-center gap-2 bg-gradient-primary text-primary-foreground hover:shadow-glow transform hover:scale-105 shadow-premium h-11 rounded-md px-8 font-medium transition-all duration-300"
                 >
                   Contact Support
                 </a>
                 <a 
-                  href="mailto:sales@viami.com" 
+                  href="mailto:sales@viami.in" 
                   className="inline-flex items-center justify-center gap-2 border border-accent/20 bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-foreground transition-all duration-300"
                 >
                   Talk to Sales

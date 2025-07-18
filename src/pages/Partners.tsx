@@ -226,7 +226,7 @@ const Partners = () => {
                   <Mail className="w-8 h-8 text-primary mx-auto mb-3" />
                   <h3 className="text-lg font-semibold text-foreground mb-2">Email Us</h3>
                   <p className="text-muted-foreground mb-2">Partnership inquiries:</p>
-                  <p className="text-primary font-semibold">partners@viami.com</p>
+                  <p className="text-primary font-semibold">partners@viami.in</p>
                 </Card>
                 <Card className="p-6 bg-gradient-card border-accent/20 text-center">
                   <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
