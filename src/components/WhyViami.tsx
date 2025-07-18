@@ -235,67 +235,6 @@ const WhyViami = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* Management Team Section */}
-      {/* <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-foreground">Leadership Team</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our experienced leadership team brings decades of cybersecurity expertise from leading technology companies and government agencies.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="p-6 bg-gradient-card border-accent/20 text-center hover:border-primary/30 transition-colors">
-                <div className="text-6xl mb-4">{member.image}</div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">{member.name}</h3>
-                <p className="text-primary font-medium mb-2">{member.role}</p>
-                <p className="text-sm text-muted-foreground">{member.experience}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Company Journey Section */}
-      {/* <section className="py-20 bg-gradient-subtle">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-gradient-primary rounded-2xl shadow-glow">
-                <Calendar className="w-12 h-12 text-primary-foreground" />
-              </div>
-            </div>
-            <h2 className="text-4xl font-bold mb-6 text-foreground">Our Journey</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From a small startup to a global leader in SaaS security, our journey has been marked by innovation, growth, and unwavering commitment to our customers.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-glow">
-                      <span className="text-primary-foreground font-bold">{milestone.year}</span>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{milestone.title}</h3>
-                    <p className="text-muted-foreground">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-=======
->>>>>>> 264f6c604b7137dacf357d4e50cf17467ff5173a
       {/* Why Choose Us Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6">
