@@ -12,29 +12,76 @@ interface DemoFormProps {
   children: React.ReactNode;
 }
 
+// For better type-safety and autocompletion
+interface DemoFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  company: string;
+  jobTitle: string;
+  phone: string;
+  companySize: string;
+  securityNeeds: string;
+  message: string;
+}
+
+const initialFormData: DemoFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  company: "",
+  jobTitle: "",
+  phone: "",
+  companySize: "",
+  securityNeeds: "",
+  message: ""
+};
+
 const DemoForm = ({ children }: DemoFormProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    jobTitle: "",
-    phone: "",
-    companySize: "",
-    securityNeeds: "",
-    message: ""
-  });
+  const [formData, setFormData] = useState<DemoFormData>(initialFormData);
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: keyof DemoFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic validation for required fields
+    const requiredFields: { key: keyof DemoFormData; name: string }[] = [
+      { key: 'firstName', name: 'First Name' },
+      { key: 'lastName', name: 'Last Name' },
+      { key: 'email', name: 'Business Email' },
+      { key: 'company', name: 'Company Name' },
+      { key: 'companySize', name: 'Company Size' },
+      { key: 'securityNeeds', name: 'Primary Security Need' },
+    ];
+
+    for (const field of requiredFields) {
+      if (!formData[field.key].trim()) {
+        toast({
+          title: "Missing Information",
+          description: `Please fill out the "${field.name}" field.`,
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+
+    // Simple email format validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid business email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     // Simulate form submission
@@ -49,25 +96,17 @@ const DemoForm = ({ children }: DemoFormProps) => {
     setOpen(false);
     
     // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      jobTitle: "",
-      phone: "",
-      companySize: "",
-      securityNeeds: "",
-      message: ""
-    });
+    setFormData(initialFormData);
   };
+
+  const inputClasses = "bg-background border-accent/20 focus:border-accent";
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] bg-gradient-card border-accent/20">
+      <DialogContent className="sm:max-w-3xl bg-gradient-card border-accent/20">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-3 text-2xl">
             <div className="p-2 bg-gradient-primary rounded-lg shadow-glow">
@@ -77,9 +116,9 @@ const DemoForm = ({ children }: DemoFormProps) => {
           </DialogTitle>
         </DialogHeader>
         
-        <form onSubmit={handleSubmit} className="space-y-6 mt-6">
-          {/* Personal Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+          {/* User & Company Information */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name *</Label>
               <Input
@@ -87,7 +126,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
                 required
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
             <div className="space-y-2">
@@ -97,13 +136,9 @@ const DemoForm = ({ children }: DemoFormProps) => {
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
                 required
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
-          </div>
-
-          {/* Contact Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="email">Business Email *</Label>
               <Input
@@ -112,23 +147,19 @@ const DemoForm = ({ children }: DemoFormProps) => {
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 required
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="phone">Phone Number *</Label>
+              <Label htmlFor="phone">Phone Number</Label>
               <Input
                 id="phone"
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => handleInputChange("phone", e.target.value)}
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
-          </div>
-
-          {/* Company Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="company">Company Name *</Label>
               <Input
@@ -136,16 +167,16 @@ const DemoForm = ({ children }: DemoFormProps) => {
                 value={formData.company}
                 onChange={(e) => handleInputChange("company", e.target.value)}
                 required
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="jobTitle">Job Title *</Label>
+              <Label htmlFor="jobTitle">Job Title</Label>
               <Input
                 id="jobTitle"
                 value={formData.jobTitle}
                 onChange={(e) => handleInputChange("jobTitle", e.target.value)}
-                className="bg-background border-accent/20 focus:border-accent"
+                className={inputClasses}
               />
             </div>
           </div>
@@ -173,12 +204,15 @@ const DemoForm = ({ children }: DemoFormProps) => {
                   <SelectValue placeholder="Select primary need" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="access-control">Saas Access Control</SelectItem>
-                  <SelectItem value="password-management">Password Policy</SelectItem>
-                  <SelectItem value="2fa">2FA Authentication</SelectItem>
-                  <SelectItem value="device-security">@gmail Block</SelectItem>
-                  <SelectItem value="complete-solution">Custom Login Page</SelectItem>
-                  <SelectItem value="compliance">IP Restriction</SelectItem>
+                  <SelectItem value="custom-login-page">Custom Login Page</SelectItem>
+                  <SelectItem value="password-policy">Password Policy</SelectItem>
+                  <SelectItem value="self-password-reset">Self Password Reset</SelectItem>
+                  <SelectItem value="2fa-auth">2FA Authentication</SelectItem>
+                  <SelectItem value="ip-restriction">IP Restriction</SelectItem>
+                  <SelectItem value="device-restriction">Device Restriction</SelectItem>
+                  <SelectItem value="gmail-block">Personal Gmail Block</SelectItem>
+                  <SelectItem value="software-access-management">Software Access Management</SelectItem>
+                  <SelectItem value="other">Other / Not Sure</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -192,7 +226,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
               placeholder="Tell us about your specific security challenges or requirements..."
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
-              className="bg-background border-accent/20 focus:border-accent min-h-[100px]"
+              className="bg-background border-accent/20 focus:border-accent min-h-[80px]"
             />
           </div>
 
@@ -218,7 +252,7 @@ const DemoForm = ({ children }: DemoFormProps) => {
         </form>
 
         {/* Footer Note */}
-        <div className="mt-6 p-4 bg-secondary/20 rounded-lg border border-accent/10">
+        <div className="mt-4 p-4 bg-secondary/20 rounded-lg border-accent/10">
           <p className="text-sm text-muted-foreground text-center">
             <Shield className="w-4 h-4 inline-block mr-2" />
             Our security experts will contact you within 2 hours to schedule a personalized demo tailored to your business needs.
